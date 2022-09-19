@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <title>Arrays</title>
+    <h2>Arrays</h2>
+    <p>Create an array of 5 Objects.</p>
+    <li>Find if name exists</li>
+    <li>If name exists, find if the property for that object exists</li>
+    <li>If property exists, then return the value of that property</li>
+    <li>If property does not exist, then return "No Property Found</li>
+    <li>If name doesn not exist then return "No Such Data"</li>
+    <p id="assignmentOne"></p>
+
+    <script>
+      const person = ["firstName", "lastName", "number", "likes"];
+      person["firstName"] = "Linda";
+      person["lastName"] = "Miles";
+      person["number"] = "0123456";
+      person["likes"] = "movies, shopping";
+
+      console.log(person);
+
+      const findData = { firstName: "Linda", name: "Linda" };
+      console.log(Object.getOwnPropertyNames(person));
+      console.log(Object.values(findData)); // ['Linda, 'LInda']
+
+      // Array-like object
+      const valueFindData = {
+        0: "0",
+        1: "1",
+        2: "2",
+        3: "3",
+        4: "length",
+        5: "firstName",
+        6: "lastName",
+        7: "number",
+        8: "likes",
+      };
+
+      const exists = person.hasOwnProperty("firstName");
+      console.log(exists); // true
+
+      const propExists = person.hasOwnProperty("prop");
+      console.log(exists); // "No Property Found"
+      const findName = person.name;
+      console.log(name); // "No Such Data"
+      let result = findData.prop !== undefined;
+      console.log(result); // No Property Found
+    </script>
+  </body>
+</html>
